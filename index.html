@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Võ Anh Hoàng Gia - Hành trình của tôi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af;
+            --accent: #b91c1c;
+            --success: #15803d;
+            --dark: #0f172a;
+            --gray: #475569;
+            --light: #f1f5f9;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #e0f2fe, #f0f9ff);
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(to right, transparent, white, transparent);
+        }
+        header h1 { font-size: 3.2rem; margin: 0; letter-spacing: 1px; }
+        header p { font-size: 1.4rem; opacity: 0.9; margin-top: 12px; }
+
+        .container { max-width: 1150px; margin: -50px auto 80px; padding: 0 20px; }
+
+        section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            padding: 45px 35px;
+            transition: all 0.4s ease;
+        }
+        section:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.4rem;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            text-align: center;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 3px;
+            background: var(--accent);
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+        }
+        .profile img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 5px solid #eff6ff;
+            box-shadow: 0 10px 30px rgba(30,64,175,0.25);
+        }
+        .info-grid {
+            flex: 1;
+        }
+        .info-item {
+            font-size: 1.25rem;
+            margin: 16px 0;
+            display: flex;
+            align-items: center;
+        }
+        .info-item i {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-right: 16px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        .hobby-card {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 25px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+        .hobby-card:hover { border-left-color: var(--accent); background: #ffffff; }
+        .hobby-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+        .hobby-card h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .class-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .class-gallery img {
+            width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: transform 0.4s;
+        }
+        .class-gallery img:hover { transform: scale(1.06); }
+
+        .goals ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.35rem;
+        }
+        .goals li {
+            margin: 20px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+        .goals li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-size: 1.8rem;
+        }
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px dashed var(--success);
+        }
+        .contact p {
+            font-size: 1.3rem;
+            margin: 18px 0;
+        }
+        .contact i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 12px;
+        }
+        .contact a {
+            color: #065f46;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .contact a:hover { color: var(--primary); text-decoration: underline; }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile { flex-direction: column; text-align: center; }
+            header h1 { font-size: 2.6rem; }
+            .profile img { width: 200px; height: 200px; }
+        }
+
+        /* Style nút phát video */
+        .play-btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background 0.3s;
+        }
+        .play-btn:hover {
+            background: #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Võ Anh Hoàng Gia</h1>
+        <p>Hành trình của một người con đất võ Bình Định</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <div class="profile">
+                <img src="https://i.ibb.co/pvFT67nh/IMG-20260204-133932.png" alt="Võ Anh Hoàng Gia">
+                <div class="info-grid">
+                    <h2>Chào mọi người</h2>
+                    <p>Mình là Võ Anh Hoàng Gia, hiện đang là học sinh lớp 12A1 tại trường THPT Tây Sơn. Là một người con của vùng đất võ Bình Định, mình lớn lên với những câu chuyện về tinh thần thép của các võ sư, về sự kiên trì vượt qua khó khăn. Những giá trị ấy đã thấm vào mình từ nhỏ, giúp mình luôn cố gắng dù có những lúc mệt mỏi.</p>
+                    <p>Hiện tại, mình đang dồn toàn lực cho kỳ thi tốt nghiệp THPT – không chỉ để có kết quả tốt, mà còn để tự chứng minh với bản thân rằng mình có thể làm được những điều lớn lao hơn. Ước mơ xa hơn là trở thành một chuyên gia Kiểm toán – một công việc đòi hỏi sự chính xác, trung thực và khả năng nhìn nhận vấn đề sâu sắc.</p>
+
+                    <div class="info-item"><i class="fas fa-graduation-cap"></i> <strong>Lớp: </strong> 12A1 </div>
+                    <div class="info-item"><i class="fas fa-birthday-cake"></i> <strong>Sinh nhật: </strong> 20/06/2008 </div>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ: </strong> Bỉnh Đức, Bình An, Gia Lai </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Những điều mình trân trọng</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <img src="https://i.ibb.co/1tMrnvk0/FB-IMG-1770185384787.jpg" alt="Lắp ráp mô hình">
+                    <h3>1. Lắp ráp mô hình</h3>
+                    <p>Những đêm thức đến khuya để gắn từng mảnh nhỏ, từng chi tiết tỉ mỉ – không phải vì hoàn hảo bề ngoài, mà vì cảm giác thành tựu khi nhìn thấy một thứ hỗn độn dần trở nên hoàn chỉnh. Nó dạy mình rằng mọi vấn đề khó khăn đều có thể giải quyết nếu kiên nhẫn và tập trung từng bước một.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <img src="https://i.ibb.co/q3qkc5XC/Screenshot-2026-0204-131408.png" alt="Đá bóng">
+                    <h3>2. Đá bóng</h3>
+                    <p>Không chỉ là môn thể thao, mà là nơi mình học được tinh thần đồng đội thật sự. Có những trận thua đậm, nhưng cũng có những khoảnh khắc cả đội cùng nhau đứng dậy, hỗ trợ nhau đến giây cuối cùng. Đá bóng dạy mình rằng đôi khi chiến thắng không phải là ghi bàn, mà là không bỏ cuộc khi đồng đội cần mình nhất.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <img src="https://i.ibb.co/YT7pvBQt/Screenshot-20260207-211919-com-garena-game-kgvn.jpg" alt="Chơi game">
+                    <h3>3. Chơi game</h3>
+                    <p>Sau những giờ học căng thẳng, game là nơi mình tạm gác lại áp lực để thư giãn. Mình không chơi để trốn tránh, mà để nạp lại năng lượng. Những trận đấu khốc liệt trong game cũng giúp mình rèn luyện phản xạ và khả năng ra quyết định nhanh – kỹ năng mà sau này chắc chắn sẽ hữu ích.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <h3>4. Nghe nhạc</h3>
+                    <p>Những bản nhạc đã đồng hành cùng mình qua nhiều đêm học khuya, qua những lúc mệt mỏi và cả những lúc vui vẻ. Chúng không chỉ là âm thanh, mà là người bạn thầm lặng nhắc mình rằng mọi thứ rồi sẽ qua, cứ bước tiếp thôi.</p>
+                    <iframe style="border-radius:12px; margin-top:20px;" width="100%" height="380" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/playlist/38bAH30yTToV2wvFHqcgEZ?utm_source=generator"></iframe>
+                </div>
+
+                <!-- Phần 5: Xem phim (đã fix video hoàn toàn) -->
+                <div class="hobby-card" style="grid-column: span 2; background: #f0f9ff; border-left: 5px solid #7c3aed; margin-top: 30px;">
+                    <h3>5. Xem phim</h3>
+                    <p>Xem phim là cách mình thư giãn và học hỏi nhiều điều hay ho từ cuộc sống, từ những câu chuyện anh hùng, phiêu lưu, đến những bài học sâu sắc về tình bạn, gia đình và sự kiên cường. Những bộ phim hay khiến mình suy ngẫm và truyền cảm hứng để cố gắng hơn mỗi ngày.</p>
+                    <div class="class-gallery" style="margin-top: 20px; justify-content: center;">
+                        <img src="https://i.ibb.co/S7RZxbWG/jojos-bizarre-adventure-part-7-steel-ball-run-vol-6-9781974762255-hr.jpg" alt="JoJo's Bizarre Adventure Part 7">
+                        <img src="https://i.ibb.co/XrBcv4ZC/captain-america-the-first-avenger.jpg" alt="Captain America: The First Avenger">
+                        <img src="https://i.ibb.co/ch4w6dYz/f9ddd832d1b566f5b8dd29a4dbc76b7531c420c8c8d9fdfe94eca128bda8e2b1.jpg" alt="Ảnh phim minh họa 3">
+                        <img src="https://i.ibb.co/KxtdCYYc/prisoner-1-1687934897.jpg" alt="Prisoner of Azkaban">
+                        <img src="https://i.ibb.co/Jj5fwHB0/MV5-BODE2-Nz-Nh-MDct-Yj-Uz-MC00-Y2-M5-LWI2-Y2-Et-ODJk-ZTFj-N2-Y5-ODlm-Xk-Ey-Xk-Fqc-Gc-V1-FMjpg-UX1000.jpg" alt="Ảnh phim mới 1">
+                        <img src="https://i.ibb.co/k2nK0RLF/MV5-BMz-U5-ZGYz-Nm-Qt-MTdh-Yy00-OGRi-LTg0-Nm-Qt-Yj-Vj-Nzli-ZTg1-ZGE4-Xk-Ey-Xk-Fqc-Gc-V1.jpg" alt="Ảnh phim mới 2">
+                    </div>
+
+                    <!-- Video YouTube fix lỗi - có nút click để phát có tiếng -->
+                    <div style="margin-top: 30px; text-align: center;">
+                        <h3>Video minh họa sở thích xem phim</h3>
+                        <p>Click nút dưới để xem trailer hay ho (có tiếng nhé!)</p>
+                        
+                        <!-- Nút phát video -->
+                        <button class="play-btn" onclick="document.getElementById('youtubeVideo').src = 'https://www.youtube.com/embed/PJw1bxuVeE4?autoplay=1&rel=0';">
+                            <i class="fas fa-play"></i> Phát video (có tiếng)
+                        </button>
+
+                        <!-- Iframe video -->
+                        <iframe 
+                            id="youtubeVideo"
+                            width="100%" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/PJw1bxuVeE4?rel=0" 
+                            title="Video YouTube minh họa" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            style="border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>12A1 – Những kỷ niệm không thể quên</h2>
+            <p style="text-align:center; font-style:italic; color:var(--gray); margin-bottom:30px;">Những buổi học nhóm đến khuya, những trận bóng cười ra nước mắt, những lần cùng nhau vượt qua áp lực thi cử... 12A1 không chỉ là một lớp học, mà là nơi mình tìm thấy gia đình thứ hai.</p>
+            <div class="class-gallery">
+                <img src="https://i.ibb.co/B7qyvH3/IMG-20251231-124949.jpg" alt="Kỷ niệm lớp 12A1">
+                <img src="https://i.ibb.co/5XHcJ47V/Screenshot-2026-0207-213319.png" alt="Khoảnh khắc đáng nhớ">
+                <img src="https://i.ibb.co/C5B0T1HQ/Screenshot-2026-0207-213414.png" alt="Cùng nhau tiến lên">
+            </div>
+        </section>
+
+        <section class="goals">
+            <h2>Mục tiêu phía trước</h2>
+            <ul>
+                <li>Tốt nghiệp THPT – không phải để có bằng cấp, mà để tự hào nhìn lại hành trình 12 năm đèn sách và biết rằng mình đã cố gắng hết mình.</li>
+                <li>Trở thành sinh viên chuyên ngành Kiểm toán tại một trường đại học mình mơ ước – nơi mình có thể học cách nhìn nhận sự thật, trung thực với bản thân và với người khác.</li>
+                <li>Sống một cuộc đời có ích – không phải để nổi tiếng, mà để khi nhìn lại, mình có thể nói rằng mình đã để lại điều gì đó tốt đẹp cho gia đình, bạn bè và xã hội.</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Liên hệ với tôi</h2>
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:0337180898">0337180898</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:voanhhoanggia@gmail.com">voanhhoanggia@gmail.com</a></p>
+            <p><i class="fab fa-facebook-f"></i> <a href="https://www.facebook.com/share/1BqeRt4Sjw/" target="_blank">Facebook</a></p>
+            <p><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@nhanvatphu7749?_r=1&_t=ZS-93j0Q2CUWph" target="_blank">TikTok</a></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Võ Anh Hoàng Gia </p>
+    </footer>
+
+</body>
+</html>
